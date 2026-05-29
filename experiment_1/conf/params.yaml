@@ -1,0 +1,22 @@
+DATA_ACQUISITION:
+  DATA_PATH: "data/raw"
+
+  START_DATE: "2020-01-01"
+  END_DATE: "2025-01-01"
+
+  # Weekly frequency: week ends on Friday
+  WEEKLY_FREQUENCY: "W-FRI"
+
+  BTC_TICKERS:
+    BTC_USD: "BTC-USD"
+
+  STOCK_TICKERS:
+    QQQ: "QQQ"
+    SPY: "SPY"
+    GLD: "GLD"
+
+  INTEREST_TICKERS:
+    VIX: "^VIX"
+    US10Y: "^TNX"
+    US20Y: "TLT"
+    US30Y: "^TYX"
