@@ -1,60 +1,106 @@
-# USW-Gruppe02
+# USW-Gruppe02: BTC/USD Algorithmic Trading Bot
 
-# BTC/USD Algorithmischer Trading Bot
-HTW Berlin | Unternehmenssoftware | Gruppenprojekt
+HTW Berlin | Unternehmenssoftware | Group Project
 
----
+## Members
 
-## Projektstruktur
-- 4 benotete Präsentationen (jeweils 20%)
-- Bewertungskriterien pro Präsentation:
-  - DS-Schritt-Kriterien (40%)
-  - Code-Verständnis / Pseudocode / Flussdiagramme (30%)
-  - Präsentationsform (30%)
+- Kim, Dongwoo
+- Cu, Kevin Nhat Tien
 
----
+## Project Overview
 
-## Präsentation 1: Problemdefinition & Datenbeschaffung
+This project develops a simple and understandable machine learning pipeline for
+a weekly BTC/USD trading bot.
 
-### Problemdefinition
+The main research question is:
 
-**Problembeschreibung:**
-- Basierend auf wöchentlichen BTC/USD-Kursdaten und makroökonomischen Indikatoren soll vorhergesagt werden, ob der BTC-Preis in der nächsten Woche steigt oder fällt. Ziel ist es zu überprüfen, ob die Vorhersagegenauigkeit eines ML-Modells in reale Trading-Gewinne umgewandelt werden kann.
+Can a machine learning model predict whether the BTC/USD price will rise or fall
+in the next week, and can this prediction be converted into trading performance?
 
-**Zielvariable:**
-- Binär: Schlusskurs (nächste Woche) > Schlusskurs (diese Woche) → 1 (Aufwärts) / 0 (Abwärts)
+## Experiments
 
-**Eingabevariablen:**
+| Experiment | Focus | Status | Link |
+| --- | --- | --- | --- |
+| Experiment 1 | Weekly BTC/USD baseline pipeline | in progress | [Details](experiment_1/README.md) |
 
-| Typ | Daten |
-|-----|-------|
-| Roh | BTC/USD OHLCV, VWAP |
-| Markt | S&P 500 (SPY), QQQ, GLD |
-| Makro | VIX, US-Anleihen (10J, 20J, 30J) |
-| Abgeleitet | SMA, EMA, RSI, MACD, Volatilität |
+At the moment, the project intentionally has only one experiment. Additional
+experiments should only be added when the first complete pipeline is finished
+and a new modelling idea is tested.
 
----
+## Data Science Process
 
-### Datenbeschaffung
+The project follows the process from the course:
 
-**Vorgehensweise:**
-Alle Rohdaten werden über yfinance bezogen und als CSV-Dateien im Verzeichnis `data/raw/` gespeichert.
+1. Problem Definition
+2. Data Acquisition
+3. Data Understanding
+4. Pre-Split Data Preparation
+5. Train / Validation / Test Split
+6. Post-Split Preparation
+7. Modelling
+8. Validation and Testing
+9. Deployment / Backtesting
 
-**Verwendete APIs:**
+## Problem Definition
 
-| API | Daten | Datei |
-|-----|-------|-------|
-| yfinance | BTC/USD wöchentliche OHLCV | BTC_USD.csv |
-| yfinance | S&P 500 (SPY), QQQ, GLD | STOCKS.csv |
-| yfinance | VIX (^VIX), US-Anleihen (^TNX, TLT, ^TYX) | INTEREST.csv |
+**Problem description:**
 
-**Parameter:**
-- START_DATE: 2020-01-01
-- END_DATE: 2025-01-01
-- Intervall: Täglich (1d), aggregiert auf wöchentlich (W-FRI)
+Based on weekly BTC/USD price data and macroeconomic indicators, the model
+predicts whether the BTC price will rise or fall in the next week.
 
-**Speicherung:**
-- Format: CSV
-- Speicherort: `data/raw/`
+**Target variable:**
 
----
+- `1`: next week's BTC close price is higher than the current close price
+- `0`: next week's BTC close price is not higher than the current close price
+
+**Input variables:**
+
+| Type | Data |
+| --- | --- |
+| Raw | BTC/USD OHLCV, VWAP |
+| Market | QQQ, SPY, GLD |
+| Macro | VIX, US bonds (10Y, 20Y, 30Y) |
+| Derived | SMA, EMA, RSI, MACD, volatility |
+
+## Data Acquisition
+
+Raw data is downloaded with `yfinance` and stored as CSV files in `data/raw/`.
+
+| API | Data | File |
+| --- | --- | --- |
+| yfinance | weekly BTC/USD OHLCV | `BTC_USD.csv` |
+| yfinance | QQQ, SPY, GLD | `STOCKS.csv` |
+| yfinance | VIX, US10Y, US20Y, US30Y | `INTEREST.csv` |
+
+Parameters:
+
+- `START_DATE`: `2020-01-01`
+- `END_DATE`: `2025-01-01`
+- API interval: daily (`1d`)
+- project frequency: weekly (`W-FRI`)
+
+## Repository Structure
+
+```text
+USW-Gruppe02/
+  data/
+    raw/
+    processed/
+  experiment_1/
+    conf/
+    images/
+    reports/
+    scripts/
+      01_data_acquisition/
+      02_data_understanding/
+  README.md
+```
+
+## Coding Principle
+
+The code should stay simple enough to explain in the graded presentation:
+
+> Write simple Python code that a beginner can easily understand. Use basic
+> Python features, minimal exception handling, very little abstraction, no
+> unnecessary classes, and no overengineering. Keep it short, readable, and easy
+> to modify.
