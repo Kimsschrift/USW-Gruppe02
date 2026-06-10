@@ -7,16 +7,20 @@ Predict whether the BTC/USD price will rise or fall in the next week.
 This script:
 1. Downloads daily raw data from yfinance
 2. Converts daily data into weekly data
-3. Saves the data as CSV files
+3. Downloads Crypto Fear & Greed Index data
+4. Converts sentiment data into weekly data
+5. Saves the data as CSV files
 
 Output files:
 - data/raw/BTC_USD.csv
 - data/raw/STOCKS.csv
 - data/raw/INTEREST.csv
+- data/raw/SENTIMENT.csv
 """
 
 from pathlib import Path
 
+import requests
 import pandas as pd
 import yfinance as yf
 import yaml
@@ -52,6 +56,9 @@ WEEKLY_FREQUENCY = config["WEEKLY_FREQUENCY"]
 BTC_TICKERS = config["BTC_TICKERS"]
 STOCK_TICKERS = config["STOCK_TICKERS"]
 INTEREST_TICKERS = config["INTEREST_TICKERS"]
+
+SENTIMENT_CONFIG = config["SENTIMENT"]
+FEAR_GREED_API_URL = SENTIMENT_CONFIG["FEAR_GREED_API_URL"]
 
 # Create data/raw folder if it does not exist
 DATA_PATH.mkdir(parents=True, exist_ok=True)
@@ -189,7 +196,72 @@ def download_group(ticker_dictionary):
     return combined_data
 
 
-# 6. BTC/USD data
+# 6. Download Crypto Fear & Greed Index
+
+def download_fear_greed_index():
+    """
+    Downloads historical Crypto Fear & Greed Index data
+    and converts it into weekly sentiment data.
+    """
+
+    print("Downloading Crypto Fear & Greed Index data...")
+
+    response = requests.get(FEAR_GREED_API_URL, timeout=30)
+    response.raise_for_status()
+
+    json_data = response.json()
+    records = json_data["data"]
+
+    sentiment_data = pd.DataFrame(records)
+
+    sentiment_data["Date"] = pd.to_datetime(
+        sentiment_data["timestamp"].astype(int),
+        unit="s"
+    )
+
+    sentiment_data["Fear_Greed_Value"] = sentiment_data["value"].astype(int)
+    sentiment_data["Fear_Greed_Class"] = sentiment_data["value_classification"]
+
+    sentiment_data = sentiment_data[
+        ["Date", "Fear_Greed_Value", "Fear_Greed_Class"]
+    ]
+
+    sentiment_data = sentiment_data.sort_values("Date")
+
+    start_date = pd.to_datetime(START_DATE)
+    end_date = pd.to_datetime(END_DATE)
+
+    sentiment_data = sentiment_data[
+        (sentiment_data["Date"] >= start_date) &
+        (sentiment_data["Date"] < end_date)
+    ]
+
+    sentiment_data = sentiment_data.set_index("Date")
+
+    weekly_sentiment = pd.DataFrame()
+
+    weekly_sentiment["Fear_Greed_Value"] = (
+        sentiment_data["Fear_Greed_Value"]
+        .resample(WEEKLY_FREQUENCY)
+        .mean()
+    )
+
+    weekly_sentiment["Fear_Greed_Class"] = (
+        sentiment_data["Fear_Greed_Class"]
+        .resample(WEEKLY_FREQUENCY)
+        .last()
+    )
+
+    weekly_sentiment = weekly_sentiment.dropna(
+        subset=["Fear_Greed_Value"]
+    )
+
+    weekly_sentiment = weekly_sentiment.reset_index()
+
+    return weekly_sentiment
+
+
+# 7. BTC/USD data
 
 print("Starting BTC/USD data acquisition")
 
@@ -202,7 +274,7 @@ print(f"Saved BTC/USD data to: {btc_file}")
 print(f"Shape: {btc_data.shape}")
 
 
-# 7. Market data: QQQ, SPY, GLD
+# 8. Market data: QQQ, SPY, GLD
 
 print("Starting market data acquisition")
 
@@ -215,7 +287,7 @@ print(f"Saved market data to: {stocks_file}")
 print(f"Shape: {stocks_data.shape}")
 
 
-# 8. Macro / interest data: VIX, US10Y, US20Y, US30Y
+# 9. Macro / interest data: VIX, US10Y, US20Y proxy, US30Y
 
 print("Starting macro / interest data acquisition")
 
@@ -228,13 +300,27 @@ print(f"Saved macro / interest data to: {interest_file}")
 print(f"Shape: {interest_data.shape}")
 
 
-# 9. Final overview
+# 10. Sentiment data: Crypto Fear & Greed Index
+
+print("Starting sentiment data acquisition")
+
+sentiment_data = download_fear_greed_index()
+
+sentiment_file = DATA_PATH / "SENTIMENT.csv"
+sentiment_data.to_csv(sentiment_file, index=False)
+
+print(f"Saved sentiment data to: {sentiment_file}")
+print(f"Shape: {sentiment_data.shape}")
+
+
+# 11. Final overview
 
 print("Data Acquisition completed successfully.")
 print("Created files:")
 print(f"- {btc_file}")
 print(f"- {stocks_file}")
 print(f"- {interest_file}")
+print(f"- {sentiment_file}")
 
 print("BTC/USD sample:")
 print(btc_data.head())
@@ -244,3 +330,6 @@ print(stocks_data.head())
 
 print("INTEREST sample:")
 print(interest_data.head())
+
+print("SENTIMENT sample:")
+print(sentiment_data.head())
