@@ -60,6 +60,7 @@ predicts whether the BTC price will rise or fall in the next week.
 | Raw | BTC/USD OHLCV, VWAP |
 | Market | QQQ, SPY, GLD |
 | Macro | VIX, US bonds (10Y, 20Y, 30Y) |
+| Sentiment | Crypto Fear & Greed Index |
 | Derived | SMA, EMA, RSI, MACD, volatility |
 
 ## Data Acquisition
@@ -71,6 +72,7 @@ Raw data is downloaded with `yfinance` and stored as CSV files in `data/raw/`.
 | yfinance | weekly BTC/USD OHLCV | `BTC_USD.csv` |
 | yfinance | QQQ, SPY, GLD | `STOCKS.csv` |
 | yfinance | VIX, US10Y, US20Y, US30Y | `INTEREST.csv` |
+| alternative.me | Crypto Fear & Greed Index | `SENTIMENT.csv` |
 
 Parameters:
 

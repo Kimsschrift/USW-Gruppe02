@@ -3,15 +3,16 @@
 ## Overview by symbol
 
 ```text
-dataset  symbol  ticker  rows start_date   end_date  missing_values  duplicate_dates  large_date_gaps  close_min  close_mean  close_max  volume_mean
-    BTC BTC_USD BTC-USD   262 2020-01-03 2025-01-03               0                0                0    5563.71    36472.53  101459.26 2.313645e+11
- MARKET     GLD     GLD   262 2020-01-03 2025-01-03               0                0                0     140.11      181.13     253.32 4.138891e+07
- MARKET     QQQ     QQQ   262 2020-01-03 2025-01-03               0                0                0     170.70      345.43     530.53 2.380664e+08
- MARKET     SPY     SPY   262 2020-01-03 2025-01-03               0                0                0     228.80      425.56     607.81 3.920702e+08
-  MACRO   US10Y    ^TNX   262 2020-01-03 2025-01-03               0                0                0       0.54        2.69       4.92 0.000000e+00
-  MACRO   US20Y     TLT   262 2020-01-03 2025-01-03               0                0                0      83.24      122.84     171.00 1.137476e+08
-  MACRO   US30Y    ^TYX   262 2020-01-03 2025-01-03               0                0                0       1.18        3.05       5.09 0.000000e+00
-  MACRO     VIX    ^VIX   262 2020-01-03 2025-01-03               0                0                0      11.93       21.06      66.04 0.000000e+00
+  dataset     symbol         ticker  rows start_date   end_date  missing_values  duplicate_dates  large_date_gaps  close_min  close_mean  close_max  volume_mean
+      BTC    BTC_USD        BTC-USD   262 2020-01-03 2025-01-03               0                0                0    5563.71    36472.53  101459.26 2.313645e+11
+   MARKET        GLD            GLD   262 2020-01-03 2025-01-03               0                0                0     140.11      181.13     253.32 4.138891e+07
+   MARKET        QQQ            QQQ   262 2020-01-03 2025-01-03               0                0                0     170.70      345.43     530.53 2.380664e+08
+   MARKET        SPY            SPY   262 2020-01-03 2025-01-03               0                0                0     228.80      425.56     607.81 3.920702e+08
+    MACRO      US10Y           ^TNX   262 2020-01-03 2025-01-03               0                0                0       0.54        2.69       4.92 0.000000e+00
+    MACRO      US20Y            TLT   262 2020-01-03 2025-01-03               0                0                0      83.24      122.84     171.00 1.137476e+08
+    MACRO      US30Y           ^TYX   262 2020-01-03 2025-01-03               0                0                0       1.18        3.05       5.09 0.000000e+00
+    MACRO        VIX           ^VIX   262 2020-01-03 2025-01-03               0                0                0      11.93       21.06      66.04 0.000000e+00
+SENTIMENT FEAR_GREED alternative.me   262 2020-01-03 2025-01-03               0                0                0       9.00       50.23      93.43 0.000000e+00
 ```
 
 ## BTC
@@ -21,7 +22,7 @@ dataset  symbol  ticker  rows start_date   end_date  missing_values  duplicate_d
 - Date range: 2020-01-03 to 2025-01-03
 - Symbols: BTC_USD
 - Total missing values: 0
-- Duplicate Date/Symbol rows: 0
+- Duplicate date rows: 0
 
 ### Descriptive statistics
 
@@ -55,7 +56,7 @@ max    101451.44  108268.45  94321.26  101459.26  7.873680e+11  101571.77
 - Date range: 2020-01-03 to 2025-01-03
 - Symbols: GLD, QQQ, SPY
 - Total missing values: 0
-- Duplicate Date/Symbol rows: 0
+- Duplicate date rows: 0
 
 ### Descriptive statistics
 
@@ -89,7 +90,7 @@ max    607.69  609.07  602.34  607.81  1.562964e+09  605.89
 - Date range: 2020-01-03 to 2025-01-03
 - Symbols: US10Y, US20Y, US30Y, VIX
 - Total missing values: 0
-- Duplicate Date/Symbol rows: 0
+- Duplicate date rows: 0
 
 ### Descriptive statistics
 
@@ -114,4 +115,38 @@ max     179.10   179.70   168.98   171.00  3.086069e+08   170.58
 2020-01-17 1.834 1.858 1.780  1.836      1.836       0 1.824667  US10Y   ^TNX
 2020-01-24 1.797 1.797 1.670  1.681      1.681       0 1.716000  US10Y   ^TNX
 2020-01-31 1.612 1.655 1.512  1.520      1.520       0 1.562333  US10Y   ^TNX
+```
+
+## SENTIMENT
+
+- Rows: 262
+- Columns: Date, Fear_Greed_Value, Fear_Greed_Class
+- Date range: 2020-01-03 to 2025-01-03
+- Symbols: FEAR_GREED
+- Total missing values: 0
+- Duplicate date rows: 0
+
+### Descriptive statistics
+
+```text
+       Fear_Greed_Value
+count            262.00
+mean              50.23
+std               21.99
+min                9.00
+25%               30.14
+50%               50.79
+75%               70.71
+max               93.43
+```
+
+### Sample rows
+
+```text
+      Date  Fear_Greed_Value Fear_Greed_Class
+2020-01-03         38.000000             Fear
+2020-01-10         42.000000             Fear
+2020-01-17         51.857143          Neutral
+2020-01-24         48.857143             Fear
+2020-01-31         50.857143            Greed
 ```

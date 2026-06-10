@@ -5,6 +5,7 @@ Input files:
 - data/raw/BTC_USD.csv
 - data/raw/STOCKS.csv
 - data/raw/INTEREST.csv
+- data/raw/SENTIMENT.csv
 
 Output files:
 - experiment_1/reports/02_data_understanding_report.md
@@ -28,6 +29,7 @@ INPUT_FILES = {
     "BTC": RAW_DATA_DIR / "BTC_USD.csv",
     "MARKET": RAW_DATA_DIR / "STOCKS.csv",
     "MACRO": RAW_DATA_DIR / "INTEREST.csv",
+    "SENTIMENT": RAW_DATA_DIR / "SENTIMENT.csv",
 }
 
 REPORT_PATH = REPORT_DIR / "02_data_understanding_report.md"
@@ -38,13 +40,42 @@ def load_csv(file_path):
     """Load one CSV file and make sure Date is a datetime column."""
     data = pd.read_csv(file_path)
     data["Date"] = pd.to_datetime(data["Date"])
-    data = data.sort_values(["Symbol", "Date"])
+
+    if "Symbol" in data.columns:
+        data = data.sort_values(["Symbol", "Date"])
+    else:
+        data = data.sort_values("Date")
+
     return data
 
 
 def build_overview(name, data):
-    """Create one overview row for each symbol in one data file."""
+    """Create overview rows for one data file."""
     rows = []
+
+    if "Symbol" not in data.columns:
+        date_diff = data["Date"].diff().dt.days
+        large_gaps = date_diff[date_diff > 10].count()
+
+        rows.append(
+            {
+                "dataset": name,
+                "symbol": "FEAR_GREED",
+                "ticker": "alternative.me",
+                "rows": len(data),
+                "start_date": data["Date"].min().date(),
+                "end_date": data["Date"].max().date(),
+                "missing_values": int(data.isna().sum().sum()),
+                "duplicate_dates": int(data.duplicated(["Date"]).sum()),
+                "large_date_gaps": int(large_gaps),
+                "close_min": data["Fear_Greed_Value"].min(),
+                "close_mean": data["Fear_Greed_Value"].mean(),
+                "close_max": data["Fear_Greed_Value"].max(),
+                "volume_mean": 0,
+            }
+        )
+
+        return rows
 
     for symbol, symbol_data in data.groupby("Symbol"):
         date_diff = symbol_data["Date"].diff().dt.days
@@ -78,12 +109,23 @@ def add_dataset_section(report_lines, name, data):
     report_lines.append(f"- Rows: {len(data)}")
     report_lines.append(f"- Columns: {', '.join(data.columns)}")
     report_lines.append(f"- Date range: {data['Date'].min().date()} to {data['Date'].max().date()}")
-    report_lines.append(f"- Symbols: {', '.join(sorted(data['Symbol'].unique()))}")
+
+    if "Symbol" in data.columns:
+        report_lines.append(f"- Symbols: {', '.join(sorted(data['Symbol'].unique()))}")
+        duplicate_count = int(data.duplicated(["Date", "Symbol"]).sum())
+    else:
+        report_lines.append("- Symbols: FEAR_GREED")
+        duplicate_count = int(data.duplicated(["Date"]).sum())
+
     report_lines.append(f"- Total missing values: {int(data.isna().sum().sum())}")
-    report_lines.append(f"- Duplicate Date/Symbol rows: {int(data.duplicated(['Date', 'Symbol']).sum())}")
+    report_lines.append(f"- Duplicate date rows: {duplicate_count}")
     report_lines.append("")
 
-    important_columns = ["Open", "High", "Low", "Close", "Volume", "VWAP"]
+    if "Fear_Greed_Value" in data.columns:
+        important_columns = ["Fear_Greed_Value"]
+    else:
+        important_columns = ["Open", "High", "Low", "Close", "Volume", "VWAP"]
+
     stats = data[important_columns].describe().round(2)
 
     report_lines.append("### Descriptive statistics")

@@ -34,6 +34,7 @@ Raw data is stored in `../../data/raw/`.
 | `BTC_USD.csv` | weekly BTC/USD OHLCV and VWAP |
 | `STOCKS.csv` | weekly QQQ, SPY, and GLD data |
 | `INTEREST.csv` | weekly VIX, US10Y, US20Y, and US30Y data |
+| `SENTIMENT.csv` | weekly Crypto Fear & Greed Index data |
 
 The data covers the period from `2020-01-03` to `2025-01-03`.
 Each symbol has 262 weekly observations.
@@ -72,6 +73,7 @@ Outputs:
 - `images/02_raw_data_overview.png`
 - `images/02_performance_comparison.png`
 - `images/02_correlation_matrix.png`
+- `images/02_sentiment_overview.png`
 
 This step covers the data understanding requirements:
 
@@ -91,7 +93,8 @@ This step covers the data understanding requirements:
 5. BTC/USD shows much stronger volatility than QQQ, SPY, and GLD.
 6. BTC weekly returns have a weak positive correlation with QQQ and SPY.
 7. BTC weekly returns have a negative correlation with VIX.
-8. Because absolute price levels are very different, returns and normalized
+8. The Fear & Greed Index gives an additional weekly sentiment signal from 0 to 100.
+9. Because absolute price levels are very different, returns and normalized
    indicators should be used for modelling.
 
 ## How To Run
@@ -117,5 +120,6 @@ Planned tasks:
 - create weekly return features
 - create rolling volatility features
 - create SMA, EMA, RSI, and MACD indicators
+- include Fear & Greed sentiment as an additional feature
 - create the binary target variable for next week
 - save the feature and target dataset in `../../data/processed/`

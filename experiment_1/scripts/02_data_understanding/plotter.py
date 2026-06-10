@@ -1,18 +1,17 @@
 """
 Data Understanding: plots for raw weekly data
 
-This script uses pandas and Pillow. It avoids complex plotting code so that the
-steps are easy to explain in the presentation.
-
 Input files:
 - data/raw/BTC_USD.csv
 - data/raw/STOCKS.csv
 - data/raw/INTEREST.csv
+- data/raw/SENTIMENT.csv
 
 Output files:
 - experiment_1/images/02_raw_data_overview.png
 - experiment_1/images/02_performance_comparison.png
 - experiment_1/images/02_correlation_matrix.png
+- experiment_1/images/02_sentiment_overview.png
 """
 
 from pathlib import Path
@@ -31,6 +30,7 @@ IMAGE_DIR = EXPERIMENT_DIR / "images"
 BTC_FILE = RAW_DATA_DIR / "BTC_USD.csv"
 STOCKS_FILE = RAW_DATA_DIR / "STOCKS.csv"
 INTEREST_FILE = RAW_DATA_DIR / "INTEREST.csv"
+SENTIMENT_FILE = RAW_DATA_DIR / "SENTIMENT.csv"
 
 COLORS = [
     (30, 30, 30),
@@ -48,7 +48,12 @@ def load_csv(file_path):
     """Load one CSV file and make sure Date is a datetime column."""
     data = pd.read_csv(file_path)
     data["Date"] = pd.to_datetime(data["Date"])
-    data = data.sort_values(["Symbol", "Date"])
+
+    if "Symbol" in data.columns:
+        data = data.sort_values(["Symbol", "Date"])
+    else:
+        data = data.sort_values("Date")
+
     return data
 
 
@@ -199,6 +204,27 @@ def save_performance_comparison(btc_data, stocks_data):
     print(f"Saved: {save_path}")
 
 
+def save_sentiment_overview(sentiment_data):
+    """Save a plot of the Crypto Fear & Greed Index."""
+    sentiment = sentiment_data.set_index("Date")
+
+    image = Image.new("RGB", (1200, 650), "white")
+    draw = ImageDraw.Draw(image)
+    font = ImageFont.load_default()
+
+    draw_line_panel(
+        draw,
+        (20, 20, 1180, 630),
+        "Crypto Fear & Greed Index, weekly average",
+        {"Fear & Greed": sentiment["Fear_Greed_Value"]},
+        font,
+    )
+
+    save_path = IMAGE_DIR / "02_sentiment_overview.png"
+    image.save(save_path)
+    print(f"Saved: {save_path}")
+
+
 def color_for_correlation(value):
     """Return a simple blue-white-red color for a correlation value."""
     value = max(min(value, 1), -1)
@@ -215,16 +241,19 @@ def color_for_correlation(value):
     return red, green, blue
 
 
-def save_correlation_matrix(btc_data, stocks_data, interest_data):
-    """Save a heatmap of weekly return correlations."""
+def save_correlation_matrix(btc_data, stocks_data, interest_data, sentiment_data):
+    """Save a heatmap of weekly returns and sentiment changes."""
     btc_close = close_prices_by_symbol(btc_data)
     stocks_close = close_prices_by_symbol(stocks_data)
     interest_close = close_prices_by_symbol(interest_data)
+    sentiment = sentiment_data.set_index("Date")["Fear_Greed_Value"]
 
     prices = pd.concat([btc_close, stocks_close, interest_close], axis=1)
     prices = prices.dropna()
 
-    returns = prices.pct_change().dropna()
+    returns = prices.pct_change()
+    returns["FEAR_GREED_CHANGE"] = sentiment.diff()
+    returns = returns.dropna()
     corr = returns.corr()
 
     labels = list(corr.columns)
@@ -271,10 +300,12 @@ def main():
     btc_data = load_csv(BTC_FILE)
     stocks_data = load_csv(STOCKS_FILE)
     interest_data = load_csv(INTEREST_FILE)
+    sentiment_data = load_csv(SENTIMENT_FILE)
 
     save_raw_data_overview(btc_data, stocks_data, interest_data)
     save_performance_comparison(btc_data, stocks_data)
-    save_correlation_matrix(btc_data, stocks_data, interest_data)
+    save_sentiment_overview(sentiment_data)
+    save_correlation_matrix(btc_data, stocks_data, interest_data, sentiment_data)
 
     print("Data Understanding plots finished.")
 
