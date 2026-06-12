@@ -23,3 +23,24 @@ DATA_ACQUISITION:
 
   SENTIMENT:
     FEAR_GREED_API_URL: "https://api.alternative.me/fng/?limit=0&format=json"
+
+PRE_SPLIT_PREP:
+  RAW_DATA_PATH: "data/raw"
+  PROCESSED_DATA_PATH: "data/processed"
+
+  TARGET_HORIZON_WEEKS: 1
+
+  BTC_RETURN_WINDOWS:
+    - 1
+    - 2
+    - 4
+
+  ROLLING_WINDOWS:
+    - 4
+    - 8
+    - 12
+
+  RSI_WINDOW: 14
+  MACD_FAST_WINDOW: 12
+  MACD_SLOW_WINDOW: 26
+  MACD_SIGNAL_WINDOW: 9

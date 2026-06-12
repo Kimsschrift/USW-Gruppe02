@@ -95,6 +95,7 @@ USW-Gruppe02/
     scripts/
       01_data_acquisition/
       02_data_understanding/
+      03_pre_split_prep/
   README.md
 ```
 
