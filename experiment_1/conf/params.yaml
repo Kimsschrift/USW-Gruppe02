@@ -91,3 +91,10 @@ MODELLING:
       LEARNING_RATE: 0.03
       SUBSAMPLE: 0.80
       COLSAMPLE_BYTREE: 0.80
+
+
+BACKTESTING:
+  INITIAL_CAPITAL: 1.0
+
+  # Cost per position change. Keep 0.0 for the first simple experiment.
+  TRANSACTION_COST: 0.0

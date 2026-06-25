@@ -39,7 +39,8 @@ The project follows the process from the course:
 6. Post-Split Preparation
 7. Modelling
 8. Validation and Testing
-9. Deployment / Backtesting
+9. Backtesting
+10. Deployment
 
 ## Problem Definition
 
@@ -96,6 +97,10 @@ USW-Gruppe02/
       01_data_acquisition/
       02_data_understanding/
       03_pre_split_prep/
+      04_data_split/
+      05_post_split_preparation/
+      06_modelling/
+      07_backtesting/
   README.md
 ```
 

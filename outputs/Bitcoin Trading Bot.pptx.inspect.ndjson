@@ -1,0 +1,140 @@
+{"kind":"deck","id":"pr/t3pbzw","name":"Deck"}
+{"kind":"layout","layoutId":"0f79093b-6de3-4490-b936-bb50c7bba1f5","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"96b3c630-314d-4e0c-9764-cedceec4eac0","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/842yd1","slide":1,"title":"USW Gruppe02","textShapes":6}
+{"kind":"textbox","id":"sh/w7mp0bi9","slide":1,"text":"USW Gruppe02","textPreview":"USW Gruppe02","textChars":12,"textLines":1,"bbox":[72,54,300,32]}
+{"kind":"textbox","id":"sh/7mp0bi9s","slide":1,"text":"Bitcoin Trading Bot","textPreview":"Bitcoin Trading Bot","textChars":19,"textLines":1,"bbox":[72,135,760,78]}
+{"kind":"textbox","id":"sh/e1w7mp0b","slide":1,"text":"04 Split Data  •  05 Preparation  •  06 Modelling  •  07 Backtesting","textPreview":"04 Split Data  •  05 Preparation  •  06 Modelling  •  07 Backtesting","textChars":68,"textLines":1,"bbox":[72,230,940,34]}
+{"kind":"textbox","id":"sh/pg3ex0nu","slide":1,"text":"Dongwoo Kim · Cu, Kevin Nhat Tien","textPreview":"Dongwoo Kim · Cu, Kevin Nhat Tien","textChars":33,"textLines":1,"bbox":[72,560,700,36]}
+{"kind":"textbox","id":"sh/wval87ed","slide":1,"text":"HTW Berlin | Unternehmenssoftware","textPreview":"HTW Berlin | Unternehmenssoftware","textChars":33,"textLines":1,"bbox":[72,626,500,26]}
+{"kind":"shape","id":"sh/7adsji5s","slide":1,"bbox":[910,0,370,720]}
+{"kind":"textbox","id":"sh/epkzupwb","slide":1,"text":"Trainieren\nTesten\nBacktesten","textPreview":"Trainieren | Testen | Backtesten","textChars":28,"textLines":3,"bbox":[960,210,270,220]}
+{"kind":"notes","id":"nt/842yd1","slide":1,"text":""}
+{"kind":"slide","id":"sl/ozuhc1","slide":2,"title":"ÜBERBLICK","textShapes":23}
+{"kind":"textbox","id":"sh/q5o7qpg3","slide":2,"text":"ÜBERBLICK","textPreview":"ÜBERBLICK","textChars":9,"textLines":1,"bbox":[58,34,420,30]}
+{"kind":"textbox","id":"sh/1w7mp0bi","slide":2,"text":"Was zeigen wir heute?","textPreview":"Was zeigen wir heute?","textChars":21,"textLines":1,"bbox":[58,70,980,64]}
+{"kind":"textbox","id":"sh/8bat47y1","slide":2,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[58,660,80,24]}
+{"kind":"shape","id":"sh/j2t83itg","slide":2,"bbox":[80,210,230,160]}
+{"kind":"textbox","id":"sh/qh0fepkz","slide":2,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[102,230,70,34]}
+{"kind":"textbox","id":"sh/18jqh0fe","slide":2,"text":"Split Data","textPreview":"Split Data","textChars":10,"textLines":1,"bbox":[102,270,185,34]}
+{"kind":"textbox","id":"sh/8nqxs72x","slide":2,"text":"Zeitlich trennen","textPreview":"Zeitlich trennen","textChars":16,"textLines":1,"bbox":[102,312,185,52]}
+{"kind":"shape","id":"sh/j6tovaho","slide":2,"bbox":[360,210,230,160]}
+{"kind":"textbox","id":"sh/ulwval87","slide":2,"text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[382,230,70,34]}
+{"kind":"textbox","id":"sh/4vmtwra5","slide":2,"text":"Preparation","textPreview":"Preparation","textChars":11,"textLines":1,"bbox":[382,270,185,34]}
+{"kind":"textbox","id":"sh/tgfmlkjm","slide":2,"text":"Features auswählen\nund skalieren","textPreview":"Features auswählen | und skalieren","textChars":32,"textLines":2,"bbox":[382,312,185,52]}
+{"kind":"shape","id":"sh/mp0bi9s3","slide":2,"bbox":[640,210,230,160]}
+{"kind":"textbox","id":"sh/bat47y1k","slide":2,"text":"06","textPreview":"06","textChars":2,"textLines":1,"bbox":[662,230,70,34]}
+{"kind":"textbox","id":"sh/47y1kre1","slide":2,"text":"Modelling","textPreview":"Modelling","textChars":9,"textLines":1,"bbox":[662,270,185,34]}
+{"kind":"textbox","id":"sh/tsvu9kni","slide":2,"text":"Modelle trainieren\nund testen","textPreview":"Modelle trainieren | und testen","textChars":29,"textLines":2,"bbox":[662,312,185,52]}
+{"kind":"shape","id":"sh/m1cfa9w3","slide":2,"bbox":[920,210,230,160]}
+{"kind":"textbox","id":"sh/bm58z25k","slide":2,"text":"07","textPreview":"07","textChars":2,"textLines":1,"bbox":[942,230,70,34]}
+{"kind":"textbox","id":"sh/4byhgn29","slide":2,"text":"Backtesting","textPreview":"Backtesting","textChars":11,"textLines":1,"bbox":[942,270,185,34]}
+{"kind":"textbox","id":"sh/twra5gbq","slide":2,"text":"Trading-Regel\nbewerten","textPreview":"Trading-Regel | bewerten","textChars":22,"textLines":2,"bbox":[942,312,185,52]}
+{"kind":"shape","id":"sh/1gvy90je","slide":2,"bbox":[120,455,300,112]}
+{"kind":"textbox","id":"sh/8z25kb6x","slide":2,"text":"Train → Validation → Test","textPreview":"Train → Validation → Test","textChars":25,"textLines":1,"bbox":[138,473,264,54]}
+{"kind":"textbox","id":"sh/je9cvixc","slide":2,"text":"kein zufälliger Split","textPreview":"kein zufälliger Split","textChars":21,"textLines":1,"bbox":[138,527,264,32]}
+{"kind":"shape","id":"sh/qtcj6tov","slide":2,"bbox":[490,455,260,112]}
+{"kind":"textbox","id":"sh/xs72x4na","slide":2,"text":"21 Features","textPreview":"21 Features","textChars":11,"textLines":1,"bbox":[508,473,224,54]}
+{"kind":"textbox","id":"sh/87ed8bat","slide":2,"text":"nach Feature-Auswahl","textPreview":"nach Feature-Auswahl","textChars":20,"textLines":1,"bbox":[508,527,224,32]}
+{"kind":"shape","id":"sh/fmlkjm1c","slide":2,"bbox":[820,455,300,112]}
+{"kind":"textbox","id":"sh/q1orytsv","slide":2,"text":"1 Backtest","textPreview":"1 Backtest","textChars":10,"textLines":1,"bbox":[838,473,264,54]}
+{"kind":"textbox","id":"sh/x4nap4r6","slide":2,"text":"auf finalem Testzeitraum","textPreview":"auf finalem Testzeitraum","textChars":24,"textLines":1,"bbox":[838,527,264,32]}
+{"kind":"shape","id":"sh/8jqh0fep","slide":2,"bbox":[104,438,340,160]}
+{"kind":"shape","id":"sh/2t83itgf","slide":2,"bbox":[120,455,300,112]}
+{"kind":"textbox","id":"sh/re1w7mp0","slide":2,"text":"Train → Val → Test","textPreview":"Train → Val → Test","textChars":18,"textLines":1,"bbox":[145,482,250,36]}
+{"kind":"textbox","id":"sh/kzupwb2h","slide":2,"text":"chronologischer Split","textPreview":"chronologischer Split","textChars":21,"textLines":1,"bbox":[145,528,250,28]}
+{"kind":"notes","id":"nt/ozuhc1","slide":2,"text":""}
+{"kind":"slide","id":"sl/y3bpo7","slide":3,"title":"04 SPLIT DATA","textShapes":9}
+{"kind":"textbox","id":"sh/epkzupwb","slide":3,"text":"04 SPLIT DATA","textPreview":"04 SPLIT DATA","textChars":13,"textLines":1,"bbox":[58,34,420,30]}
+{"kind":"textbox","id":"sh/pg3ex0nu","slide":3,"text":"Chronologischer Split statt Random Split","textPreview":"Chronologischer Split statt Random Split","textChars":40,"textLines":1,"bbox":[58,70,980,64]}
+{"kind":"textbox","id":"sh/wval87ed","slide":3,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[58,660,80,24]}
+{"kind":"shape","id":"sh/e1w7mp0b","slide":3,"bbox":[790,180,340,110]}
+{"kind":"textbox","id":"sh/psfil0rq","slide":3,"text":"60 / 20 / 20","textPreview":"60 / 20 / 20","textChars":12,"textLines":1,"bbox":[808,198,304,54]}
+{"kind":"textbox","id":"sh/w7mp0bi9","slide":3,"text":"Train, Validation, Test","textPreview":"Train, Validation, Test","textChars":23,"textLines":1,"bbox":[808,252,304,30]}
+{"kind":"shape","id":"sh/7u54zido","slide":3,"bbox":[790,325,340,110]}
+{"kind":"textbox","id":"sh/ed8bat47","slide":3,"text":"1 Woche","textPreview":"1 Woche","textChars":7,"textLines":1,"bbox":[808,343,304,54]}
+{"kind":"textbox","id":"sh/onyd0z61","slide":3,"text":"Embargo zwischen Splits","textPreview":"Embargo zwischen Splits","textChars":23,"textLines":1,"bbox":[808,397,304,30]}
+{"kind":"textbox","id":"sh/d8v6psfi","slide":3,"text":"• Zeitreihe: keine Durchmischung","textPreview":"• Zeitreihe: keine Durchmischung","textChars":32,"textLines":1,"bbox":[805,485,380,34]}
+{"kind":"textbox","id":"sh/6hcrmhk3","slide":3,"text":"• Test bleibt bis zum Ende unberührt","textPreview":"• Test bleibt bis zum Ende unberührt","textChars":36,"textLines":1,"bbox":[805,525,410,34]}
+{"kind":"chart","id":"ch/3q5o7qpg","slide":3,"name":"","chartType":"bar","bbox":[80,165,650,380]}
+{"kind":"notes","id":"nt/y3bpo7","slide":3,"text":""}
+{"kind":"slide","id":"sl/9tfmgp","slide":4,"title":"05 PREPARATION","textShapes":14}
+{"kind":"textbox","id":"sh/3q5o7qpg","slide":4,"text":"05 PREPARATION","textPreview":"05 PREPARATION","textChars":14,"textLines":1,"bbox":[58,34,420,30]}
+{"kind":"textbox","id":"sh/wb2hwfyx","slide":4,"text":"Feature-Auswahl und Skalierung ohne Leakage","textPreview":"Feature-Auswahl und Skalierung ohne Leakage","textChars":43,"textLines":1,"bbox":[58,70,980,64]}
+{"kind":"textbox","id":"sh/lwval87e","slide":4,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[58,660,80,24]}
+{"kind":"shape","id":"sh/ex0nuxc3","slide":4,"bbox":[90,190,210,125]}
+{"kind":"textbox","id":"sh/3itgfmlk","slide":4,"text":"28","textPreview":"28","textChars":2,"textLines":1,"bbox":[108,208,174,54]}
+{"kind":"textbox","id":"sh/w3m94fu1","slide":4,"text":"Features vorher","textPreview":"Features vorher","textChars":15,"textLines":1,"bbox":[108,262,174,45]}
+{"kind":"textbox","id":"sh/loj2t83i","slide":4,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[335,218,80,80]}
+{"kind":"shape","id":"sh/at47y1kr","slide":4,"bbox":[440,190,250,125]}
+{"kind":"textbox","id":"sh/3ex0nuxc","slide":4,"text":"21","textPreview":"21","textChars":2,"textLines":1,"bbox":[458,208,214,54]}
+{"kind":"textbox","id":"sh/3itgfmlk","slide":4,"text":"Features nach Auswahl","textPreview":"Features nach Auswahl","textChars":21,"textLines":1,"bbox":[458,262,214,45]}
+{"kind":"shape","id":"sh/ex0nuxc3","slide":4,"bbox":[750,190,280,125]}
+{"kind":"textbox","id":"sh/loj2t83i","slide":4,"text":"0.90","textPreview":"0.90","textChars":4,"textLines":1,"bbox":[768,208,244,54]}
+{"kind":"textbox","id":"sh/w3m94fu1","slide":4,"text":"Korrelationsschwelle","textPreview":"Korrelationsschwelle","textChars":20,"textLines":1,"bbox":[768,262,244,45]}
+{"kind":"shape","id":"sh/3q5o7qpg","slide":4,"bbox":[100,400,1010,88]}
+{"kind":"textbox","id":"sh/e9cvixcz","slide":4,"text":"Feature Selection nur auf Train-Daten","textPreview":"Feature Selection nur auf Train-Daten","textChars":37,"textLines":1,"bbox":[130,418,470,38]}
+{"kind":"textbox","id":"sh/lwval87e","slide":4,"text":"Validation und Test beeinflussen die Auswahl nicht.","textPreview":"Validation und Test beeinflussen die Auswahl nicht.","textChars":51,"textLines":1,"bbox":[610,424,460,34]}
+{"kind":"textbox","id":"sh/wb2hwfyx","slide":4,"text":"• Scaler wird nur auf Train fit gemacht","textPreview":"• Scaler wird nur auf Train fit gemacht","textChars":39,"textLines":1,"bbox":[115,540,520,34]}
+{"kind":"textbox","id":"sh/32lszqtc","slide":4,"text":"• Gleicher Scaler für Validation und Test","textPreview":"• Gleicher Scaler für Validation und Test","textChars":41,"textLines":1,"bbox":[620,540,520,34]}
+{"kind":"notes","id":"nt/9tfmgp","slide":4,"text":""}
+{"kind":"slide","id":"sl/obolln","slide":5,"title":"06 MODELLING","textShapes":8}
+{"kind":"textbox","id":"sh/ixczed8v","slide":5,"text":"06 MODELLING","textPreview":"06 MODELLING","textChars":12,"textLines":1,"bbox":[58,34,420,30]}
+{"kind":"textbox","id":"sh/tovahoza","slide":5,"text":"Validation: Logistic Regression gewinnt knapp","textPreview":"Validation: Logistic Regression gewinnt knapp","textChars":45,"textLines":1,"bbox":[58,70,980,64]}
+{"kind":"textbox","id":"sh/032lszqt","slide":5,"text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[58,660,80,24]}
+{"kind":"shape","id":"sh/i9s36hcr","slide":5,"bbox":[830,175,300,112]}
+{"kind":"textbox","id":"sh/p0bi9s36","slide":5,"text":"54.5%","textPreview":"54.5%","textChars":5,"textLines":1,"bbox":[848,193,264,54]}
+{"kind":"textbox","id":"sh/0fepkzup","slide":5,"text":"Balanced Accuracy","textPreview":"Balanced Accuracy","textChars":17,"textLines":1,"bbox":[848,247,264,32]}
+{"kind":"shape","id":"sh/byhgn29g","slide":5,"bbox":[830,315,300,112]}
+{"kind":"textbox","id":"sh/idonyd0z","slide":5,"text":"C = 0.1","textPreview":"C = 0.1","textChars":7,"textLines":1,"bbox":[848,333,264,54]}
+{"kind":"textbox","id":"sh/c7u54zid","slide":5,"text":"gewähltes Modell","textPreview":"gewähltes Modell","textChars":16,"textLines":1,"bbox":[848,387,264,32]}
+{"kind":"textbox","id":"sh/1orytsvu","slide":5,"text":"Baseline: 50.0%\nXGBoost: 48.8%","textPreview":"Baseline: 50.0% | XGBoost: 48.8%","textChars":30,"textLines":2,"bbox":[840,475,300,80]}
+{"kind":"image","id":"im/uxc3ylc7","slide":5,"name":"","alt":"08_final_validation_model_comparison.png","bbox":[55,150,720,450]}
+{"kind":"notes","id":"nt/obolln","slide":5,"text":""}
+{"kind":"slide","id":"sl/e5vswf","slide":6,"title":"06 TEST EVALUATION","textShapes":12}
+{"kind":"textbox","id":"sh/q1orytsv","slide":6,"text":"06 TEST EVALUATION","textPreview":"06 TEST EVALUATION","textChars":18,"textLines":1,"bbox":[58,34,420,30]}
+{"kind":"textbox","id":"sh/xs72x4na","slide":6,"text":"Test: Prognose noch nicht stabil genug","textPreview":"Test: Prognose noch nicht stabil genug","textChars":38,"textLines":1,"bbox":[58,70,980,64]}
+{"kind":"textbox","id":"sh/87ed8bat","slide":6,"text":"06","textPreview":"06","textChars":2,"textLines":1,"bbox":[58,660,80,24]}
+{"kind":"shape","id":"sh/qtcj6tov","slide":6,"bbox":[675,160,220,110]}
+{"kind":"textbox","id":"sh/1gvy90je","slide":6,"text":"49.0%","textPreview":"49.0%","textChars":5,"textLines":1,"bbox":[693,178,184,54]}
+{"kind":"textbox","id":"sh/8z25kb6x","slide":6,"text":"Accuracy","textPreview":"Accuracy","textChars":8,"textLines":1,"bbox":[693,232,184,30]}
+{"kind":"shape","id":"sh/fa9w3m94","slide":6,"bbox":[930,160,250,110]}
+{"kind":"textbox","id":"sh/qpg3ex0n","slide":6,"text":"49.6%","textPreview":"49.6%","textChars":5,"textLines":1,"bbox":[948,178,214,54]}
+{"kind":"textbox","id":"sh/wjudg7ad","slide":6,"text":"Balanced Accuracy","textPreview":"Balanced Accuracy","textChars":17,"textLines":1,"bbox":[948,232,214,30]}
+{"kind":"shape","id":"sh/p4r65wju","slide":6,"bbox":[675,315,220,110]}
+{"kind":"textbox","id":"sh/ed8v6psf","slide":6,"text":"61.3%","textPreview":"61.3%","textChars":5,"textLines":1,"bbox":[693,333,184,54]}
+{"kind":"textbox","id":"sh/7y1kre1w","slide":6,"text":"ROC-AUC","textPreview":"ROC-AUC","textChars":7,"textLines":1,"bbox":[693,387,184,30]}
+{"kind":"shape","id":"sh/0bi9s36h","slide":6,"bbox":[930,315,250,110]}
+{"kind":"textbox","id":"sh/pwb2hwfy","slide":6,"text":"20.0%","textPreview":"20.0%","textChars":5,"textLines":1,"bbox":[948,333,214,54]}
+{"kind":"textbox","id":"sh/i5sneloj","slide":6,"text":"Recall für Up","textPreview":"Recall für Up","textChars":13,"textLines":1,"bbox":[948,387,214,30]}
+{"kind":"textbox","id":"sh/7qpg3ex0","slide":6,"text":"Viele Up-Wochen wurden verpasst.\nFür Trading reicht das noch nicht.","textPreview":"Viele Up-Wochen wurden verpasst. | Für Trading reicht das noch nicht.","textChars":67,"textLines":2,"bbox":[690,500,490,80]}
+{"kind":"image","id":"im/6psfil0r","slide":6,"name":"","alt":"09_final_test_confusion_matrix.png","bbox":[72,150,530,430]}
+{"kind":"notes","id":"nt/e5vswf","slide":6,"text":""}
+{"kind":"slide","id":"sl/ycyv4h","slide":7,"title":"07 BACKTESTING","textShapes":9}
+{"kind":"textbox","id":"sh/fmlkjm1c","slide":7,"text":"07 BACKTESTING","textPreview":"07 BACKTESTING","textChars":14,"textLines":1,"bbox":[58,34,420,30]}
+{"kind":"textbox","id":"sh/87ed8bat","slide":7,"text":"Strategie macht Gewinn, aber Buy-and-Hold ist stärker","textPreview":"Strategie macht Gewinn, aber Buy-and-Hold ist stärker","textChars":53,"textLines":1,"bbox":[58,70,980,64]}
+{"kind":"textbox","id":"sh/xs72x4na","slide":7,"text":"07","textPreview":"07","textChars":2,"textLines":1,"bbox":[58,660,80,24]}
+{"kind":"shape","id":"sh/je9cvixc","slide":7,"bbox":[800,165,300,110]}
+{"kind":"textbox","id":"sh/8z25kb6x","slide":7,"text":"16.5%","textPreview":"16.5%","textChars":5,"textLines":1,"bbox":[818,183,264,54]}
+{"kind":"textbox","id":"sh/1gvy90je","slide":7,"text":"Model Strategy","textPreview":"Model Strategy","textChars":14,"textLines":1,"bbox":[818,237,264,30]}
+{"kind":"shape","id":"sh/qpg3ex0n","slide":7,"bbox":[800,300,300,110]}
+{"kind":"textbox","id":"sh/fa9w3m94","slide":7,"text":"123.4%","textPreview":"123.4%","textChars":6,"textLines":1,"bbox":[818,318,264,54]}
+{"kind":"textbox","id":"sh/je9cvixc","slide":7,"text":"Buy-and-Hold","textPreview":"Buy-and-Hold","textChars":12,"textLines":1,"bbox":[818,372,264,30]}
+{"kind":"textbox","id":"sh/qtcj6tov","slide":7,"text":"10 von 49 Wochen investiert\n12 Positionswechsel","textPreview":"10 von 49 Wochen investiert | 12 Positionswechsel","textChars":47,"textLines":2,"bbox":[810,460,330,90]}
+{"kind":"shape","id":"sh/1gvy90je","slide":7,"bbox":[50,145,700,455]}
+{"kind":"textbox","id":"sh/fmlkjm1c","slide":7,"text":"Total Return in %","textPreview":"Total Return in %","textChars":17,"textLines":1,"bbox":[90,535,300,30]}
+{"kind":"chart","id":"ch/epkzupwb","slide":7,"name":"","chartType":"bar","bbox":[70,165,660,410]}
+{"kind":"chart","id":"ch/83itgfml","slide":7,"name":"","chartType":"bar","bbox":[80,180,620,355]}
+{"kind":"notes","id":"nt/ycyv4h","slide":7,"text":""}
+{"kind":"slide","id":"sl/3wrbwx","slide":8,"title":"FAZIT","textShapes":9}
+{"kind":"textbox","id":"sh/hwfyxobm","slide":8,"text":"FAZIT","textPreview":"FAZIT","textChars":5,"textLines":1,"bbox":[58,34,420,30]}
+{"kind":"textbox","id":"sh/65wjudg7","slide":8,"text":"Pipeline funktioniert, Modell muss besser werden","textPreview":"Pipeline funktioniert, Modell muss besser werden","textChars":48,"textLines":1,"bbox":[58,70,980,64]}
+{"kind":"textbox","id":"sh/zqtcj6to","slide":8,"text":"08","textPreview":"08","textChars":2,"textLines":1,"bbox":[58,660,80,24]}
+{"kind":"shape","id":"sh/oza1gvy9","slide":8,"bbox":[80,170,1040,90]}
+{"kind":"textbox","id":"sh/hk3q5o7q","slide":8,"text":"04–07 sind als durchgehender Workflow umgesetzt.","textPreview":"04–07 sind als durchgehender Workflow umgesetzt.","textChars":48,"textLines":1,"bbox":[115,194,930,42]}
+{"kind":"textbox","id":"sh/6xkf6dcb","slide":8,"text":"• Sauberer chronologischer Split mit Embargo","textPreview":"• Sauberer chronologischer Split mit Embargo","textChars":44,"textLines":1,"bbox":[115,325,800,34]}
+{"kind":"textbox","id":"sh/zed8v6ps","slide":8,"text":"• Feature-Auswahl und Skalierung ohne Test-Leakage","textPreview":"• Feature-Auswahl und Skalierung ohne Test-Leakage","textChars":50,"textLines":1,"bbox":[115,375,880,34]}
+{"kind":"textbox","id":"sh/orytsvu9","slide":8,"text":"• Erstes Modell wurde trainiert und final getestet","textPreview":"• Erstes Modell wurde trainiert und final getestet","textChars":50,"textLines":1,"bbox":[115,425,850,34]}
+{"kind":"textbox","id":"sh/hcrmhk3q","slide":8,"text":"• Backtest zeigt: aktuelle Strategie schlägt Buy-and-Hold nicht","textPreview":"• Backtest zeigt: aktuelle Strategie schlägt Buy-and-Hold nicht","textChars":63,"textLines":1,"bbox":[115,475,930,34]}
+{"kind":"textbox","id":"sh/d4vmtwra","slide":8,"text":"Nächster Schritt: Features, Schwellenwert und Trading-Regel verbessern.","textPreview":"Nächster Schritt: Features, Schwellenwert und Trading-Regel verbessern.","textChars":71,"textLines":1,"bbox":[115,570,930,45]}
+{"kind":"notes","id":"nt/3wrbwx","slide":8,"text":""}

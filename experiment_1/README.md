@@ -10,8 +10,8 @@ The task is a binary classification problem:
 - `1`: BTC/USD close price rises next week
 - `0`: BTC/USD close price does not rise next week
 
-The experiment currently focuses on problem definition, data acquisition, data
-understanding, and pre-split data preparation.
+The experiment currently covers the first complete pipeline from data
+acquisition to modelling and a first backtesting step.
 
 ## Current Status
 
@@ -20,10 +20,11 @@ understanding, and pre-split data preparation.
 | 01 Data Acquisition | `scripts/01_data_acquisition/` | done |
 | 02 Data Understanding | `scripts/02_data_understanding/` | done |
 | 03 Pre-Split Data Preparation | `scripts/03_pre_split_prep/` | done |
-| 04 Split Data | `scripts/04_split_data/` | planned |
-| 05 Post-Split Preparation | `scripts/05_preparation/` | planned |
-| 06 Modelling | `scripts/06_modelling/` | planned |
-| 07 Deployment / Backtesting | `scripts/07_deployment/` | planned |
+| 04 Split Data | `scripts/04_data_split/` | done |
+| 05 Post-Split Preparation | `scripts/05_post_split_preparation/` | done |
+| 06 Modelling | `scripts/06_modelling/` | done |
+| 07 Backtesting | `scripts/07_backtesting/` | done |
+| 08 Deployment | `scripts/08_deployment/` | planned |
 
 ## Data
 
@@ -447,18 +448,57 @@ python experiment_1/scripts/06_modelling/02_logistic_regression.py
 python experiment_1/scripts/06_modelling/03_xgboost.py
 python experiment_1/scripts/06_modelling/04_model_selection_and_test.py
 python experiment_1/scripts/06_modelling/05_model_visualisations.py
+python experiment_1/scripts/07_backtesting/01_create_trading_signals.py
+python experiment_1/scripts/07_backtesting/02_backtest_evaluation.py
 ```
 
-## Next Step
+## 07 Backtesting
 
-The next planned step is `07_backtesting`.
+Scripts:
 
-The final test predictions can be used without retraining the model to compare:
+* `scripts/07_backtesting/01_create_trading_signals.py`
+* `scripts/07_backtesting/02_backtest_evaluation.py`
+
+### Goal
+
+The final test predictions from step 06 are converted into a simple trading
+strategy and compared with Buy-and-Hold and Cash.
+
+### Trading Rule
 
 * model strategy: hold BTC only when the predicted target is `Up`
 * BTC buy-and-hold strategy
 * cash strategy
 
-Possible backtesting outputs include total return, an equity curve, number of
-weeks invested, maximum drawdown, and optional risk-adjusted performance
-metrics.
+The model is not retrained in this step. The script only evaluates whether the
+saved test predictions would have produced useful trading performance.
+
+### Parameters
+
+| Parameter | Value | Purpose |
+| --- | ---: | --- |
+| `INITIAL_CAPITAL` | `1.0` | Start value for the equity curve |
+| `TRANSACTION_COST` | `0.0` | Cost per position change |
+
+### Outputs
+
+* `../data/processed/07_trading_signals.csv`
+* `../data/processed/07_backtest_summary.csv`
+* `images/07_backtest_equity_curve.png`
+* `images/07_backtest_weekly_returns.png`
+* `reports/07_backtesting_report.md`
+
+### Interpretation
+
+Backtesting answers a different question than modelling:
+
+* Modelling checks whether the model predicts `Up` and `Not Up` correctly.
+* Backtesting checks whether those predictions create useful trading
+  performance.
+
+## Next Step
+
+The next planned step is `08_deployment`.
+
+Deployment should load the final model and scaler, read the newest weekly data,
+and print one current trading signal for the next week.
