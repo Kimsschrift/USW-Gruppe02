@@ -1,0 +1,4 @@
+Model,Split,Accuracy,Balanced_Accuracy,Precision_Up,Recall_Up,F1_Up,ROC_AUC,True_Negative,False_Positive,False_Negative,True_Positive,Model_Group,C_Value,N_Estimators,Max_Depth,Learning_Rate,Subsample,Colsample_Bytree
+Baseline_Always_Up,Validation,0.4897959183673469,0.5,0.4897959183673469,1.0,0.6575342465753424,0.5,0,25,0,24,Baseline,,,,,,
+LogisticRegression_C_0.1,Validation,0.5510204081632653,0.5449999999999999,0.6,0.25,0.3529411764705882,0.5216666666666667,21,4,18,6,Logistic Regression,0.1,,,,,
+XGBoost_Shallow_100,Validation,0.4897959183673469,0.4883333333333334,0.4761904761904761,0.4166666666666667,0.4444444444444444,0.4416666666666666,14,11,14,10,XGBoost,,100.0,2.0,0.03,0.8,0.8

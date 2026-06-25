@@ -1,0 +1,29 @@
+Feature,Selected,Max_Abs_Correlation,Most_Correlated_Selected_Feature,Reason
+btc_return_1w,True,0.0,,First feature retained.
+btc_return_2w,True,0.7555842654232253,btc_return_1w,Retained because correlation is below threshold.
+btc_return_4w,True,0.7633572040233921,btc_return_2w,Retained because correlation is below threshold.
+btc_range_pct,True,0.22704550622345787,btc_return_1w,Retained because correlation is below threshold.
+btc_volume_change_1w,True,0.36810138454001246,btc_range_pct,Retained because correlation is below threshold.
+btc_vwap_distance,True,0.888129725174261,btc_return_1w,Retained because correlation is below threshold.
+btc_sma_ratio_4w,False,0.956695348937171,btc_return_2w,Removed because correlation exceeds threshold 0.90.
+btc_volatility_4w,True,0.6187693503882509,btc_range_pct,Retained because correlation is below threshold.
+btc_sma_ratio_8w,False,0.9314836401807837,btc_return_4w,Removed because correlation exceeds threshold 0.90.
+btc_volatility_8w,True,0.6416357458249481,btc_volatility_4w,Retained because correlation is below threshold.
+btc_sma_ratio_12w,True,0.8640808276191903,btc_return_4w,Retained because correlation is below threshold.
+btc_volatility_12w,True,0.803947900915746,btc_volatility_8w,Retained because correlation is below threshold.
+btc_rsi_14w,True,0.7837984734106359,btc_sma_ratio_12w,Retained because correlation is below threshold.
+btc_macd,True,0.6816776697454022,btc_rsi_14w,Retained because correlation is below threshold.
+btc_macd_signal,False,0.9482128317646922,btc_macd,Removed because correlation exceeds threshold 0.90.
+market_GLD_return_1w,True,0.12455547857112237,btc_return_1w,Retained because correlation is below threshold.
+market_QQQ_return_1w,True,0.31783522243386425,btc_vwap_distance,Retained because correlation is below threshold.
+market_SPY_return_1w,False,0.9143816934427442,market_QQQ_return_1w,Removed because correlation exceeds threshold 0.90.
+macro_US10Y_close,True,0.5926083958971434,btc_rsi_14w,Retained because correlation is below threshold.
+macro_US20Y_close,False,0.9907029351979987,macro_US10Y_close,Removed because correlation exceeds threshold 0.90.
+macro_US30Y_close,False,0.9900278364959428,macro_US10Y_close,Removed because correlation exceeds threshold 0.90.
+macro_VIX_close,True,0.33473705909982576,btc_macd,Retained because correlation is below threshold.
+macro_US10Y_change_1w,True,0.22075569126741082,market_GLD_return_1w,Retained because correlation is below threshold.
+macro_US20Y_change_1w,True,0.8679699091910049,macro_US10Y_change_1w,Retained because correlation is below threshold.
+macro_US30Y_change_1w,False,0.9712723430391123,macro_US20Y_change_1w,Removed because correlation exceeds threshold 0.90.
+macro_VIX_change_1w,True,0.6597836298197143,market_QQQ_return_1w,Retained because correlation is below threshold.
+fear_greed_value,True,0.8688775750150128,btc_sma_ratio_12w,Retained because correlation is below threshold.
+fear_greed_change_1w,True,0.5899381619952558,btc_return_2w,Retained because correlation is below threshold.

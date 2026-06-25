@@ -1,0 +1,22 @@
+Feature,Coefficient,Absolute_Coefficient,Direction
+macro_VIX_change_1w,-0.2417722812032336,0.2417722812032336,Higher value associated with Not Up
+btc_volatility_12w,0.20404912107876555,0.20404912107876555,Higher value associated with Up
+btc_range_pct,-0.19972653033512677,0.19972653033512677,Higher value associated with Not Up
+btc_volume_change_1w,0.19219352613547508,0.19219352613547508,Higher value associated with Up
+fear_greed_change_1w,0.16843867328645123,0.16843867328645123,Higher value associated with Up
+btc_rsi_14w,0.1617846452949023,0.1617846452949023,Higher value associated with Up
+btc_volatility_4w,0.14420982169634244,0.14420982169634244,Higher value associated with Up
+macro_US10Y_close,-0.1397304224743742,0.1397304224743742,Higher value associated with Not Up
+btc_volatility_8w,0.1320152565001165,0.1320152565001165,Higher value associated with Up
+btc_macd,-0.12400134871594311,0.12400134871594311,Higher value associated with Not Up
+macro_VIX_close,0.08020230558914576,0.08020230558914576,Higher value associated with Up
+btc_sma_ratio_12w,-0.07542924589334415,0.07542924589334415,Higher value associated with Not Up
+macro_US20Y_change_1w,0.07475456514646393,0.07475456514646393,Higher value associated with Up
+fear_greed_value,-0.07138690787121317,0.07138690787121317,Higher value associated with Not Up
+market_GLD_return_1w,0.0539708087026656,0.0539708087026656,Higher value associated with Up
+btc_vwap_distance,0.03832074023997657,0.03832074023997657,Higher value associated with Up
+market_QQQ_return_1w,-0.03579517333867718,0.03579517333867718,Higher value associated with Not Up
+btc_return_1w,-0.03195754785406908,0.03195754785406908,Higher value associated with Not Up
+btc_return_2w,-0.021921785808997576,0.021921785808997576,Higher value associated with Not Up
+macro_US10Y_change_1w,0.01037940154164603,0.01037940154164603,Higher value associated with Up
+btc_return_4w,0.004974163666200966,0.004974163666200966,Higher value associated with Up

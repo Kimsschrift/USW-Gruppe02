@@ -1,0 +1,11 @@
+Feature,Coefficient,Absolute_Coefficient,Direction
+macro_VIX_change_1w,-0.2417722812032336,0.2417722812032336,Negative association with Up
+btc_volatility_12w,0.2040491210787655,0.2040491210787655,Positive association with Up
+btc_range_pct,-0.1997265303351267,0.1997265303351267,Negative association with Up
+btc_volume_change_1w,0.192193526135475,0.192193526135475,Positive association with Up
+fear_greed_change_1w,0.1684386732864512,0.1684386732864512,Positive association with Up
+btc_rsi_14w,0.1617846452949023,0.1617846452949023,Positive association with Up
+btc_volatility_4w,0.1442098216963424,0.1442098216963424,Positive association with Up
+macro_US10Y_close,-0.1397304224743742,0.1397304224743742,Negative association with Up
+btc_volatility_8w,0.1320152565001165,0.1320152565001165,Positive association with Up
+btc_macd,-0.1240013487159431,0.1240013487159431,Negative association with Up

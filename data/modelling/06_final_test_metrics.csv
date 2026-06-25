@@ -1,0 +1,2 @@
+Model,Split,Accuracy,Balanced_Accuracy,Precision_Up,Recall_Up,F1_Up,ROC_AUC,True_Negative,False_Positive,False_Negative,True_Positive
+LogisticRegression_C_0.1,Test,0.4897959183673469,0.49583333333333335,0.5,0.2,0.2857142857142857,0.6133333333333334,19,5,20,5

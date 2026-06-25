@@ -24,6 +24,7 @@ DATA_ACQUISITION:
   SENTIMENT:
     FEAR_GREED_API_URL: "https://api.alternative.me/fng/?limit=0&format=json"
 
+
 PRE_SPLIT_PREP:
   RAW_DATA_PATH: "data/raw"
   PROCESSED_DATA_PATH: "data/processed"
@@ -44,3 +45,49 @@ PRE_SPLIT_PREP:
   MACD_FAST_WINDOW: 12
   MACD_SLOW_WINDOW: 26
   MACD_SIGNAL_WINDOW: 9
+
+
+DATA_SPLIT:
+  TRAIN_RATIO: 0.60
+  VALIDATION_RATIO: 0.20
+  TEST_RATIO: 0.20
+  EMBARGO_WEEKS: 1
+
+
+POST_SPLIT_PREPARATION:
+  CORRELATION_THRESHOLD: 0.90
+
+
+MODELLING:
+  RANDOM_STATE: 42
+
+  # The validation metric used to choose the final model.
+  PRIMARY_METRIC: "Balanced_Accuracy"
+
+  LOGISTIC_C_VALUES:
+    - 0.01
+    - 0.1
+    - 1.0
+    - 10.0
+
+  XGBOOST_CONFIGURATIONS:
+    - NAME: "XGBoost_Shallow_50"
+      N_ESTIMATORS: 50
+      MAX_DEPTH: 2
+      LEARNING_RATE: 0.05
+      SUBSAMPLE: 0.80
+      COLSAMPLE_BYTREE: 0.80
+
+    - NAME: "XGBoost_Shallow_100"
+      N_ESTIMATORS: 100
+      MAX_DEPTH: 2
+      LEARNING_RATE: 0.03
+      SUBSAMPLE: 0.80
+      COLSAMPLE_BYTREE: 0.80
+
+    - NAME: "XGBoost_Depth3_100"
+      N_ESTIMATORS: 100
+      MAX_DEPTH: 3
+      LEARNING_RATE: 0.03
+      SUBSAMPLE: 0.80
+      COLSAMPLE_BYTREE: 0.80
